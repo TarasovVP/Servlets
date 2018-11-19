@@ -1,33 +1,41 @@
-div{
+
+fieldset {
     font-family: Arial;
     font-size: 25px;
+    padding: auto;
 }
-label{
+
+label {
     font-size: 13px;
+    text-align: left;
+
+}
+div2{
+    margin-right: 20%;
+
 }
 
+p {
+    margin: 0;
+    padding: 5px;
+}
 
+ #p1, #p2{
+    text-align: right;
+     margin-right: 75%;
+ }
 
 .bttn {
     font-size: 20px;
-    font-weight:bold;
-    color:#fffff0;
+    font-weight: bold;
+    color: #fffff0;
     border: 1px solid #7a7b7e;
     border-radius: 30px;
     background: greenyellow;
+    text-align: center;
 
 }
-.bttn {text-align:center}
-.bttn span {
-    display: inline-block;
-    margin: 15px;
-    padding: 20px 30px;
-    cursor: pointer;
-    border-radius: 10px;
-    color: white;
-    transition: .2s linear;
-}
-.bttn span:nth-child(1) {background:#3A2F28}
-.bttn span:nth-child(1):hover {
-    box-shadow: 0 0 0 2px white, 0 0 0 4px #3A2F28;
+.bttn:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
 }
