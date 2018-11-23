@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Sakila admin</title>
-    <link rel="stylesheet" type="text/css" href="base.css">
+    <style><%@include file="/base.css"%></style>
 </head>
 <body>
 <div>
