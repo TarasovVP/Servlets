@@ -7,12 +7,12 @@
 </head>
 <body>
 <div>
-    <form>
+    <form method="post">
         <fieldset>
             <p>Введите нового актера: </p>
             <div id="div2">
-                <p id="p1"><label for="name">Имя: </label><input type="text" id="name"></p>
-                <p id="p2"><label for="surname">Фамилия: </label><input type="email" id="surname"></p>
+                <p id="p1"><label for="name">Имя: </label><input type="text" name = "name" id="name"></p>
+                <p id="p2"><label for="surname">Фамилия: </label><input type="text" name = "surname" id="surname"></p>
             </div>
             <p><input type="submit" value="Сохранить" class = "bttn"></p>
         </fieldset>

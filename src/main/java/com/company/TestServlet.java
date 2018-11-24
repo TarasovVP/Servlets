@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * Created by java on 17.11.2018.
@@ -31,7 +30,11 @@ public class TestServlet extends HttpServlet {
 
         req.getRequestDispatcher("mypage.jsp").forward(req, resp);
         req.setCharacterEncoding("UTF-8");
-        String action = req.getParameter("name");
+        String name = req.getParameter("name");
+        String surname = req.getParameter("surname");
+
+        DataBase db = new DataBase();
+        db.insert(name, surname);
 
 
     }

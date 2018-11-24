@@ -13,32 +13,19 @@ public class DataBase {
     private String user = props.getProperty("db.user");
     private String passwd = props.getProperty("db.passwd");
 
-    public void create() {
 
-        try (Connection con = DriverManager.getConnection(url, user, passwd); Statement stat = con.createStatement()) {
-            stat.execute("create schema `my_schema`");
-            stat.execute("create table my_schema.phonebook(" + "  contact VARCHAR(45)," + "  address VARCHAR(100));");
+    public void insert(String name, String surname){
 
-            System.out.println("New table \"phonebook\" is created.");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void insert(String contact, String address) {
-
-        String insert = "INSERT INTO my_schema.phonebook (contact, address)" + "VALUES (?, ?)";
+        String insert = "INSERT INTO sakila.actor (first_name, last_name)" + "VALUES (?, ?)";
 
         try (Connection con = DriverManager.getConnection(url, user, passwd); PreparedStatement prpdSttm = con.prepareStatement(insert)) {
 
-            prpdSttm.setString(1, contact);
-            prpdSttm.setString(2, address);
+            prpdSttm.setString(1, name);
+            prpdSttm.setString(2, surname);
 
             prpdSttm.execute();
 
-            System.out.println(contact + " is added to contact, " + address + " is added to address.");
+            System.out.println(name + " is added to first_name, " + surname + " is added to last_name.");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -50,7 +37,7 @@ public class DataBase {
 
     private Properties getConnectionData() {
         props = new Properties();
-        String fileName = "src/main/resources/db.properties";
+        String fileName = "D:\\IT\\Java\\LevelUp\\Servlets\\src\\main\\resources\\db.properties";
 
         try (FileInputStream in = new FileInputStream(fileName)) {
             props.load(in);

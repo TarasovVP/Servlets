@@ -5,4 +5,5 @@
       <element id="artifact" artifact-name="Servlets:war exploded" />
     </root>
   </artifact>
+
 </component>
