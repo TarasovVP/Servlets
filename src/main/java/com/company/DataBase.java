@@ -17,7 +17,11 @@ public class DataBase {
     public void insert(String name, String surname){
 
         String insert = "INSERT INTO sakila.actor (first_name, last_name)" + "VALUES (?, ?)";
-
+        try {
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver ());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         try (Connection con = DriverManager.getConnection(url, user, passwd); PreparedStatement prpdSttm = con.prepareStatement(insert)) {
 
             prpdSttm.setString(1, name);
